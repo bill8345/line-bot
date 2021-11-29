@@ -84,7 +84,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=movie_dit[message_text]))
-    elif message_text == '上映中':
+    elif message_text == '上映電影':
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=namelist))

@@ -74,7 +74,7 @@ def handle_message(event):
                 continue
     # 上映中電影爬蟲
     message_text = event.message.text
-    if message_text == '最新電影':
+    if message_text == '新片':
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=movie_name))

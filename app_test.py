@@ -55,7 +55,7 @@ def handle_message(event):
     # 上映中電影爬蟲
     name_list = []
     onair_dit = {}
-    for page in range(1, 3):
+    for page in range(1, 9):
         url_onair_movie = 'https://movies.yahoo.com.tw/movie_intheaters.html?page=' + str(page)
         re_onair_movie = requests.get(url_onair_movie)
         soup_onair = BeautifulSoup(re_onair_movie.text, 'html.parser')

@@ -49,12 +49,12 @@ def handle_message(event):
     html_politic = temp_1[0].a['href']
     message_text = event.message.text
     if message_text == '政治':
+        reply_arr = []
+        reply_arr.append(TextSendMessage(text=title_politic))
+        reply_arr.append(TextSendMessage(text=html_politic))
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=title_politic))
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=html_politic))
+            reply_arr)
     else:
         line_bot_api.reply_message(
             event.reply_token,

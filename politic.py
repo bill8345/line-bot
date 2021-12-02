@@ -9,6 +9,7 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
+import configparser
 import requests
 from bs4 import BeautifulSoup
 

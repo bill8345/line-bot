@@ -12,10 +12,13 @@ from linebot.models import (
 import requests
 from bs4 import BeautifulSoup
 
+config = configparser.ConfigParser()
+config.read('config.ini')
+
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('+tTyNqBu1SKubrawrqRUa8NS5/n0MR9hwinWh6IXOgr+xrutgmkuIohx8u/p/L3yR9IE6FIeoA+1WL1EoNsXq5/+UUuYFKQUJUxoZ82+mD0CELNSwayWX88SD1eHjjCNqxaxmZDQv582JUgeXC125wdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('666d5846ce6653484b7b65a388da2e53')
+line_bot_api = LineBotApi(config.get('line_bot','channel_token'))
+handler = WebhookHandler(config.get('line_bot','channel_secret'))
 
 
 @app.route("/callback", methods=['POST'])

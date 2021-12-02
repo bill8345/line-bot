@@ -2,7 +2,3 @@ Flask==1.1.1
 gunicorn==19.9.0
 Line-bot-sdk==1.14.0
 bs4
-tempfile
-os
-datetime
-time

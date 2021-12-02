@@ -74,14 +74,14 @@ def handle_message(event):
         reply_arr_cen.append(TextSendMessage(text=html_politic))
         line_bot_api.reply_message(
             event.reply_token,
-            reply_arr)
+            reply_arr_cen)
     elif message_text == '關鍵評論網':
         reply_arr_lens = []
         reply_arr_lens.append(TextSendMessage(text=lens_title))
         reply_arr_lens.append(TextSendMessage(text=lens_html))
         line_bot_api.reply_message(
             event.reply_token,
-            reply_arr)
+            reply_arr_lens)
     else:
         line_bot_api.reply_message(
             event.reply_token,

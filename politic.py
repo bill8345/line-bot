@@ -57,8 +57,6 @@ def handle_message(event):
     temp_1 = soup_lens.find('h2', {'class': 'title'})
     #關鍵評論網爬蟲#
 
-
-    politic_url = '*請輸入你有興趣得網路媒體*\n端傳媒\n關鍵評論網\n中央社'
     title_politic = temp_1[0].text.replace('2021', '#').split('#')[0]
     html_politic = temp_1[0].a['href']
     lens_title = temp_1.text.replace(' ', '')
@@ -66,7 +64,7 @@ def handle_message(event):
     message_text = event.message.text
 
     if message_text == '政治':
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=politic_url))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='*請輸入你有興趣得網路媒體*\n端傳媒\n關鍵評論網\n中央社'))
 
     elif message_text == '中央社':
         reply_arr_cen = []

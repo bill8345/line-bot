@@ -54,13 +54,13 @@ def handle_message(event):
     url_lens = 'https://www.thenewslens.com/category/politics'
     re_lens = requests.get(url_lens)
     soup_lens = BeautifulSoup(re_lens.text, 'html.parser')
-    temp_1 = soup_lens.find('h2', {'class': 'title'})
+    temp_2 = soup_lens.find('h2', {'class': 'title'})
     #關鍵評論網爬蟲#
-
+    
     title_politic = temp_1[0].text.replace('2021', '#').split('#')[0]
     html_politic = temp_1[0].a['href']
-    lens_title = temp_1.text.replace(' ', '')
-    lens_html = temp_1.a['href']
+    lens_title = temp_2.text.replace(' ', '')
+    lens_html = temp_2.a['href']
     message_text = event.message.text
 
     if message_text == '政治':

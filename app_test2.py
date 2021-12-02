@@ -10,7 +10,6 @@ from linebot.models import *
 
 
 #======這裡是呼叫的檔案內容=====
-from new import *
 from Function import *
 from NEJM_link import *
 #======這裡是呼叫的檔案內容=====

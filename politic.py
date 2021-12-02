@@ -12,11 +12,10 @@ from linebot.models import (
 import requests
 from bs4 import BeautifulSoup
 
-config = configparser.ConfigParser()
-config.read('config.ini')
-
 app = Flask(__name__)
 
+config = configparser.ConfigParser()
+config.read('config.ini')
 line_bot_api = LineBotApi(config.get('line_bot','channel_token'))
 handler = WebhookHandler(config.get('line_bot','channel_secret'))
 

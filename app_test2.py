@@ -19,9 +19,9 @@ from bs4 import BeautifulSoup
 app = Flask(__name__)
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 # Channel Access Token
-line_bot_api = LineBotApi('0PgxgwBCIk5Oa5B/H6wTvWkUVO1yI0f1B8gFdLLLeOHyCcJHhOLf4y07KIsfx+xqnpE1tP8Ujh3+K7S3xatd+NFMhDxKeR4SVY9YYSbXA5zyjUx9+0aIATDvJzqHxmpJXUdbNlU1N8SOjmNgARXp8gdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('fviqCIrURR0EdUCCIQR4/A598vqrP78GZW8kMNhjLYbixPNrswOqL++Xz/2NZbhEjybWywmAadFtVynQJJfnZzEgIaffW4QlGgJ3cMKKEMAraK9akKx3ZHr9OXi/pYiRuvoOu4gF+k90o/9J3DnqdwdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
-handler = WebhookHandler('9771567a160602bd98ba507a6455d5a8')
+handler = WebhookHandler('8e19280a18ffcc35a80ee8c4e418b814')
 
 
 

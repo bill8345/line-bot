@@ -8,12 +8,6 @@ from linebot.exceptions import (
 )
 from linebot.models import *
 
-
-#======這裡是呼叫的檔案內容=====
-from Function import *
-from NEJM_link import *
-#======這裡是呼叫的檔案內容=====
-
 #======python的函數庫==========
 import tempfile, os
 import datetime

@@ -1,1 +1,1 @@
-web: gunicorn app_test2:app –preload
+web: gunicorn politic:app –preload

@@ -90,7 +90,7 @@ def handle_message(event):
     message_text = event.message.text
 
     if message_text == '政治':
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='*請輸入你有興趣得網路媒體*\n端傳媒\n關鍵評論網\n中央社'))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='*請輸入你有興趣得網路媒體*\n關鍵評論網\n中央社'))
 
     elif message_text == '中央社':
         reply_arr_cen = []

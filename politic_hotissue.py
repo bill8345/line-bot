@@ -14,6 +14,7 @@ import configparser
 import requests
 from bs4 import BeautifulSoup
 from hotissue import *
+import pymongo
 
 app = Flask(__name__)
 

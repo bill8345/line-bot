@@ -1,1 +1,1 @@
-web: gunicorn politic_test:app –preload
+web: gunicorn politic_hotissue:app –preload

@@ -103,6 +103,12 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=reply_hot))
+    elif message_text in hotissue_lens:
+        search_para = ['https://www.thenewslens.com', '/search/',message_text, 'h2', 'class', 'title']
+        reply = search(search_para[0],search_para[1],search_para[2],search_para[3],search_para[4],search_para[5])
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=reply)
     else:
         line_bot_api.reply_message(
             event.reply_token,

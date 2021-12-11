@@ -51,4 +51,4 @@ def search(html, search_code, search_word, lv1, lv2 , lv2_lv1):
     re = requests.get(url)
     soup = BeautifulSoup(re.text,'html.parser')
     temp_1 = soup.find(lv1,{lv2:lv2_lv1})
-    return (temp_1.text,temp_1.a['href'])
+    return [temp_1.text,temp_1.a['href']]

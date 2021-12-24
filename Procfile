@@ -1,1 +1,1 @@
-web: python app_bill.py
+web: gunicorn app_bill:app –preload

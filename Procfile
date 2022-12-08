@@ -1,1 +1,1 @@
-web: gunicorn caculation:app –preload
+web:gunicorn caculation:app –preload

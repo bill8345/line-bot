@@ -79,7 +79,7 @@ def handle_message(event):
     if msg[0] != '$' and int(msg) >= 0:
         temp_1 = py.count('billing', 'count', 'posi')
         temp_2 = py.count('billing', 'count', 'nega')
-        temp_1.append(int(msg))
+        temp_1.append(float(msg))
         base_1 = 0
         base_2 = 0
         for i in temp_1:
@@ -93,7 +93,7 @@ def handle_message(event):
     elif msg[0] != '$' and int(msg)<0:
         temp_1 = py.count('billing', 'count', 'posi')
         temp_2 = py.count('billing', 'count', 'nega')
-        temp_2.append(int(msg))
+        temp_2.append(float(msg))
         base_1 = 0
         base_2 = 0
         for i in temp_1:
@@ -105,10 +105,10 @@ def handle_message(event):
         message = TextSendMessage(text=total_count)
         line_bot_api.reply_message(event.reply_token, message)
     elif msg[0] == '$' and int(msg.split('$')[1])>=0:
-        msg = int(msg.split('$')[1])*0.23
+        msg = float(msg.split('$')[1])*0.23
         temp_1 = py.count('billing', 'count', 'posi')
         temp_2 = py.count('billing', 'count', 'nega')
-        temp_1.append(int(msg))
+        temp_1.append(msg)
         base_1 = 0
         base_2 = 0
         for i in temp_1:
@@ -120,10 +120,10 @@ def handle_message(event):
         message = TextSendMessage(text=total_count)
         line_bot_api.reply_message(event.reply_token, message)
     elif msg[0] =='$' and int(msg.split('$')[1])<0:
-        msg = int(msg.split('$')[1])*0.23
+        msg = float(msg.split('$')[1])*0.23
         temp_1 = py.count('billing', 'count', 'posi')
         temp_2 = py.count('billing', 'count', 'nega')
-        temp_2.append(int(msg))
+        temp_2.append(msg)
         base_1 = 0
         base_2 = 0
         for i in temp_1:

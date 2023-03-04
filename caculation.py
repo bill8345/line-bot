@@ -105,7 +105,7 @@ def handle_message(event):
         message = TextSendMessage(text=total_count)
         line_bot_api.reply_message(event.reply_token, message)
     elif msg[0] == '$' and int(msg.split('$')[1])>=0:
-        msg=int(msg[1])*0.23
+        msg = int(msg.split('$')[1])*0.23
         temp_1 = py.count('billing', 'count', 'posi')
         temp_2 = py.count('billing', 'count', 'nega')
         temp_1.append(int(msg))

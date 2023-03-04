@@ -87,7 +87,7 @@ def handle_message(event):
         for x in temp_2:
             base_2 += x
         py.update('billing', 'count', temp_1, temp_2)
-        total_count = '目前結算'+str(base_1+base_2)
+        total_count = '目前結算'+str(round(base_1)+round(base_2))
         message = TextSendMessage(text=total_count)
         line_bot_api.reply_message(event.reply_token, message)
     elif msg[0] != '$' and int(msg)<0:
@@ -100,7 +100,7 @@ def handle_message(event):
             base_1 += i
         for x in temp_2:
             base_2 += x
-        total_count = '目前結算 ' + str((base_1 + base_2))
+        total_count = '目前結算 ' + str((round(base_1) + round(base_2)))
         py.update('billing', 'count', temp_1, temp_2)
         message = TextSendMessage(text=total_count)
         line_bot_api.reply_message(event.reply_token, message)
@@ -116,7 +116,7 @@ def handle_message(event):
         for x in temp_2:
             base_2 += x
         py.update('billing', 'count', temp_1, temp_2)
-        total_count = '目前結算'+str(base_1+base_2)
+        total_count = '目前結算'+str((round(base_1) + round(base_2)))
         message = TextSendMessage(text=total_count)
         line_bot_api.reply_message(event.reply_token, message)
     elif msg[0] =='$' and int(msg.split('$')[1])<0:
@@ -130,7 +130,7 @@ def handle_message(event):
             base_1 += i
         for x in temp_2:
             base_2 += x
-        total_count = '目前結算 ' + str((base_1 + base_2))
+        total_count = '目前結算 ' + str((round(base_1) + round(base_2)))
         py.update('billing', 'count', temp_1, temp_2)
         message = TextSendMessage(text=total_count)
         line_bot_api.reply_message(event.reply_token, message)

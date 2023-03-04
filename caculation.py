@@ -46,7 +46,37 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    if int(msg) >= 0:
+#     if int(msg) >= 0:
+#         temp_1 = py.count('billing', 'count', 'posi')
+#         temp_2 = py.count('billing', 'count', 'nega')
+#         temp_1.append(int(msg))
+#         base_1 = 0
+#         base_2 = 0
+#         for i in temp_1:
+#             base_1 += i
+#         for x in temp_2:
+#             base_2 += x
+#         py.update('billing', 'count', temp_1, temp_2)
+#         total_count = '目前結算'+str(base_1+base_2)
+#         message = TextSendMessage(text=total_count)
+#         line_bot_api.reply_message(event.reply_token, message)
+#     elif int(msg)<0:
+#         temp_1 = py.count('billing', 'count', 'posi')
+#         temp_2 = py.count('billing', 'count', 'nega')
+#         temp_2.append(int(msg))
+#         base_1 = 0
+#         base_2 = 0
+#         for i in temp_1:
+#             base_1 += i
+#         for x in temp_2:
+#             base_2 += x
+#         total_count = '目前結算 ' + str((base_1 + base_2))
+#         py.update('billing', 'count', temp_1, temp_2)
+#         message = TextSendMessage(text=total_count)
+#         line_bot_api.reply_message(event.reply_token, message)
+#     else:
+#         None
+    if msg[0] != '$' and int(msg) >= 0:
         temp_1 = py.count('billing', 'count', 'posi')
         temp_2 = py.count('billing', 'count', 'nega')
         temp_1.append(int(msg))
@@ -60,7 +90,35 @@ def handle_message(event):
         total_count = '目前結算'+str(base_1+base_2)
         message = TextSendMessage(text=total_count)
         line_bot_api.reply_message(event.reply_token, message)
-    elif int(msg)<0:
+    elif msg[0] != '$' and int(msg)<0:
+        temp_1 = py.count('billing', 'count', 'posi')
+        temp_2 = py.count('billing', 'count', 'nega')
+        temp_2.append(int(msg))
+        base_1 = 0
+        base_2 = 0
+        for i in temp_1:
+            base_1 += i
+        for x in temp_2:
+            base_2 += x
+        total_count = '目前結算 ' + str((base_1 + base_2))
+        py.update('billing', 'count', temp_1, temp_2)
+        message = TextSendMessage(text=total_count)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif msg[0] == '$' and int(msg.split('$')[1])>=0:
+        temp_1 = py.count('billing', 'count', 'posi')
+        temp_2 = py.count('billing', 'count', 'nega')
+        temp_1.append(int(msg))
+        base_1 = 0
+        base_2 = 0
+        for i in temp_1:
+            base_1 += i
+        for x in temp_2:
+            base_2 += x
+        py.update('billing', 'count', temp_1, temp_2)
+        total_count = '目前結算'+str(base_1+base_2)
+        message = TextSendMessage(text=total_count)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif msg[0] =='$' and int(msg.split('$')[1])<0:
         temp_1 = py.count('billing', 'count', 'posi')
         temp_2 = py.count('billing', 'count', 'nega')
         temp_2.append(int(msg))
